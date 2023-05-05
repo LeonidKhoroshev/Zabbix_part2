@@ -18,3 +18,8 @@
 Созданный алерт
 
 ![alt text](https://github.com/LeonidKhoroshev/hw-08-01-monitoring/blob/main/monitoring1.3.png)
+
+
+Пример срабатывания алерта
+
+![alt text](https://github.com/LeonidKhoroshev/hw-08-01-monitoring/blob/main/monitoring1.4.png)
