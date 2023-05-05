@@ -10,9 +10,11 @@
 
 Второй скриншот в уменьшенном масшатбе (для наглядности)
 
-![alt text](https://github.com/LeonidKhoroshev/hw-08-01-monitoring/blob/main/monitoring1.1.png)
+![alt text](https://github.com/LeonidKhoroshev/hw-08-01-monitoring/blob/main/monitoring1.2.png)
 ---
 
 ### Задание 2 С помощью Yandex Monitoring сделайте 2 алерта на загрузку процессора: WARN и ALARM. Создайте уведомление по e-mail
 
 Созданный алерт
+
+![alt text](https://github.com/LeonidKhoroshev/hw-08-01-monitoring/blob/main/monitoring1.3.png)
