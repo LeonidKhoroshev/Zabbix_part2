@@ -49,7 +49,7 @@ systemctl enable zabbix-server apache2
 
 Скриншот авторизации в админке
 
-![alt text]()
+![alt text](https://github.com/LeonidKhoroshev/hw-08-02/blob/main/screen2.1.png)
 ---
 
 ### Задание 2 Установка Zabbix Agent на два хоста
@@ -72,5 +72,16 @@ systemctl enable zabbix-agent
 
 sed -i 's/Server=127.0.0.1/Server=192.168.1.36/g' /etc/zabbix/zabbix_agent.conf
 
-sed -i 's/Server=127.0.0.1/Server=192.168.1.33/g' /etc/zabbix/zabbix_agent.conf
+sed -i 's/Server=127.0.0.1/Server=192.168.1.33/g' /etc/zabbix/zabbix_agent.con
 
+Скриншот раздела configuration
+
+![alt text](https://github.com/LeonidKhoroshev/hw-08-02/blob/main/screen2.3.png)
+
+Cкриншот лога zabbix agent, где видно, что он работает с сервером
+
+![alt text](https://github.com/LeonidKhoroshev/hw-08-02/blob/main/screen2.4.png)
+
+Cкриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
+
+![alt text](https://github.com/LeonidKhoroshev/hw-08-02/blob/main/screen2.1.png)
