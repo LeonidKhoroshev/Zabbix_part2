@@ -84,4 +84,4 @@ Cкриншот лога zabbix agent, где видно, что он работ
 
 Cкриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
 
-![alt text](https://github.com/LeonidKhoroshev/hw-08-02/blob/main/screen2.1.png)
+![alt text](https://github.com/LeonidKhoroshev/hw-08-02/blob/main/screen2.2.png)
