@@ -1,25 +1,53 @@
-# Домашнее задание к занятию "`Обзор систем IT-мониторинга`" - `Хорошев Леонид`
+# Домашнее задание к занятию "`Система мониторинга Zabbix`" - `Хорошев Леонид`
 
 ---
 
-### Задание 1 Создайте виртуальную машину в Yandex Compute Cloud и с помощью Yandex Monitoring создайте дашборд, на котором будет видно загрузку процессора.
+### Задание 1 Установите Zabbix Server с веб-интерфейсом
 
-Получившийся скриншот
+Согласно заданию выбрана последняя версия Zabbix 6.4
 
-![alt text](https://github.com/LeonidKhoroshev/hw-08-01-monitoring/blob/main/monitoring1.1.png)
+1. Установка базы данных PostgreSQL
+sudo apt install postgresql
 
-Второй скриншот в уменьшенном масшатбе (для наглядности)
+2. Установка и распаковка репозитория
+wget https://repo.zabbix.com/zabbix/6.4/debian/pool/main/z/zabbix-release/zabbix-release_6.4-1+debian11_all.deb
+dpkg -i zabbix-release_6.4-1+debian11_all.deb
+apt update
 
-![alt text](https://github.com/LeonidKhoroshev/hw-08-01-monitoring/blob/main/monitoring1.2.png)
+3. Установка заббикс сервера, веб-интерфейса
+apt install zabbix-server-pgsql zabbix-frontend-php php7.4-pgsql zabbix-apache-conf zabbix-sql-scripts
+
+4. Создание базы данных и пользователя
+sudo -u postgres createuser --pwprompt zabbix
+sudo -u postgres createdb -O zabbix zabbix
+
+5. Импорт данных на сервер Zabbix
+zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
+
+6. Настройка пароля бызы данных
+nano /etc/zabbix/zabbix_server.conf далее в файле напротив DBPassword= указываем наш пароль
+
+7. Рестарт и добавление в автозагрузку веб сервера и Заббикс сервера
+systemctl restart zabbix-server apache2
+systemctl enable zabbix-server apache2
+
+Скриншот авторизации в админке
+
+![alt text]()
 ---
 
-### Задание 2 С помощью Yandex Monitoring сделайте 2 алерта на загрузку процессора: WARN и ALARM. Создайте уведомление по e-mail
+### Задание 2 Установка Zabbix Agent на два хоста
 
-Созданный алерт
+В качестве одного из хостов использована машина с Zabbix серверо, в качестве второго - чистая ВМ.
 
-![alt text](https://github.com/LeonidKhoroshev/hw-08-01-monitoring/blob/main/monitoring1.3.png)
+1. Установка заббикс агента
+sudo apt install zabbix-agent
 
+2. Рестарт и добавление в автозагрузку Заббикс агента
+systemctl restart zabbix-agent
+systemctl enable zabbix-agent
 
-Пример срабатывания алерта
+3. Настраиваем параметры подключения заббикс агента к серверу (прописываем адреса хостов)
+sed -i 's/Server=127.0.0.1/Server=192.168.1.36/g' /etc/zabbix/zabbix_agent.conf
+sed -i 's/Server=127.0.0.1/Server=192.168.1.33/g' /etc/zabbix/zabbix_agent.conf
 
-![alt text](https://github.com/LeonidKhoroshev/hw-08-01-monitoring/blob/main/monitoring1.4.png)
