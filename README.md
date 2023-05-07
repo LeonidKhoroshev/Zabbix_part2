@@ -2,7 +2,7 @@
 
 ---
 
-### Задание 1 Установите Zabbix Server с веб-интерфейсом
+### Задание 1. Установите Zabbix Server с веб-интерфейсом
 
 Согласно заданию выбрана последняя версия Zabbix 6.4
 
@@ -52,7 +52,7 @@ systemctl enable zabbix-server apache2
 ![alt text](https://github.com/LeonidKhoroshev/hw-08-02/blob/main/screen2.1.png)
 ---
 
-### Задание 2 Установка Zabbix Agent на два хоста
+### Задание 2. Установка Zabbix Agent на два хоста
 
 В качестве одного из хостов использована машина с Zabbix серверо, в качестве второго - чистая ВМ.
 
@@ -85,3 +85,7 @@ Cкриншот лога zabbix agent, где видно, что он работ
 Cкриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
 
 ![alt text](https://github.com/LeonidKhoroshev/hw-08-02/blob/main/screen2.2.png)
+
+---
+
+### Задание 3. Установите Zabbix Agent на Windows (компьютер) и подключите его к серверу Zabbix
