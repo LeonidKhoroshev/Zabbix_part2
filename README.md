@@ -89,3 +89,9 @@ Cкриншот раздела Monitoring > Latest data для обоих хос
 ---
 
 ### Задание 3. Установите Zabbix Agent на Windows (компьютер) и подключите его к серверу Zabbix
+
+Cкриншот раздела Latest Data, где видно свободное место на диске C ({#FSLABEL}(C:): Space utilization)
+
+![alt text](https://github.com/LeonidKhoroshev/hw-08-02/blob/main/screen2.5.png)
+
+
