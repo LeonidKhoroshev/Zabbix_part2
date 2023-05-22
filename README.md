@@ -52,3 +52,59 @@ else
     echo "I don't know what is it"
 
 fi
+
+
+Результат работы скрипта при вводе параметра 1
+
+![alt text](https://github.com/LeonidKhoroshev/hw-08-03/blob/main/zabbix5.2.png)
+
+
+Результат работы скрипта при вводе параметра 2
+
+![alt text](https://github.com/LeonidKhoroshev/hw-08-03/blob/main/zabbix5.1.png)
+---
+
+
+### Задание 7. Доработайте Python-скрипт из лекции, создайте для него UserParameter и прикрепите его к созданному вами ранее шаблону. Скрипт должен:
+
+при получении 1 будет возвращать ваши ФИО,
+
+при получении 2 будет возвращать текущую дату.
+
+Код скрипта:
+
+import sys
+
+import datetime
+
+if (sys.argv[1] == "1"):
+    
+    print("Khoroshev Leonid")
+    
+elif (sys.argv[1] == "2"):
+
+    print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))
+
+else:
+    print("I don't khow what is it")
+
+Результат работы скрипта при вводе параметра 1
+
+![alt text](https://github.com/LeonidKhoroshev/hw-08-03/blob/main/zabbix6.1.png)
+
+Результат работы скрипта при вводе параметра 2
+
+![alt text](https://github.com/LeonidKhoroshev/hw-08-03/blob/main/zabbix6.2.png)
+---
+
+
+### Задание 8. Настройте автообнаружение и прикрепление к хостам созданного вами ранее шаблона.
+
+Скриншот правила обнаружения
+
+![alt text](https://github.com/LeonidKhoroshev/hw-08-03/blob/main/zabbix7.1.png)
+
+Скриншот страницы Discover
+
+![alt text](https://github.com/LeonidKhoroshev/hw-08-03/blob/main/zabbix7.2.png)
+
